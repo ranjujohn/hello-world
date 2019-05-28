@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-world-ingress
+spec:
+#  tls:
+#  - hosts:
+#    - helloworld.local
+#    secretName: tls
+  rules:
+    - host: helloworld.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: hello-world
+            servicePort: 80
